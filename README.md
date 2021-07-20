@@ -48,7 +48,8 @@ ReactDOM.render(
   children                                       
   arEnabled = true                   // `false` will disable AR and render children into regular r3f <Canvas />
   interpolationFactor = 1,           // increase to enable smoother but slower tracking
-/>
+  onWorkerMessage = () => {}         // Callback which will be invoked on a message of underlying Webworker
+/> 
 ```
 
 ### NFTMarker
