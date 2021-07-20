@@ -21,7 +21,12 @@ const constraints = {
 
 const ARNftContext = createContext({})
 
-const ARNftProvider = ({ children, video, interpolationFactor }) => {
+const ARNftProvider = ({
+  children,
+  video,
+  interpolationFactor,
+  onWorkerMessage,
+}) => {
   const { gl, camera } = useThree()
   const [arnft, setARNft] = useState(null)
   const arnftRef = useRef()
@@ -54,6 +59,7 @@ const ARNftProvider = ({ children, video, interpolationFactor }) => {
         gl,
         camera,
         onLoaded,
+        onWorkerMessage,
         interpolationFactor,
       )
 

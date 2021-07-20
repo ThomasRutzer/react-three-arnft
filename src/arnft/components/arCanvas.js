@@ -10,7 +10,7 @@ const ARCanvas = ({
   arEnabled = true,
   interpolationFactor = 1,
   children,
-  onCameraStreamReady = () => {},
+  onWorkerMessage = () => {},
   ...props
 }) => {
   const ref = useRef()
@@ -40,7 +40,11 @@ const ARCanvas = ({
         {...props}
       >
         {arEnabled ? (
-          <ARNftProvider video={ref} interpolationFactor={interpolationFactor}>
+          <ARNftProvider
+            video={ref}
+            interpolationFactor={interpolationFactor}
+            onWorkerMessage={onWorkerMessage}
+          >
             {children}
           </ARNftProvider>
         ) : (

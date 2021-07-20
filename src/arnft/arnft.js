@@ -10,6 +10,7 @@ export class ARNft {
     renderer,
     camera,
     onLoaded,
+    onMessage,
     interpolationFactor,
   ) {
     this.inputWidth = video.videoWidth
@@ -20,6 +21,7 @@ export class ARNft {
     this.renderer = renderer
     this.camera = camera
     this.onLoaded = onLoaded
+    this.onMessage = onMessage
 
     this.camera.matrixAutoUpdate = false
 
@@ -141,6 +143,8 @@ export class ARNft {
         break
       }
     }
+
+    this.onMessage(msg)
   }
 
   onFound(msg) {
