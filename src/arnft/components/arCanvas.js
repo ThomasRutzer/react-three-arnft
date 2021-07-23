@@ -36,14 +36,17 @@ const ARCanvas = ({
         ></video>
       )}
       <Canvas
-        camera={arEnabled ? { position: [0, 0, 0] } : props.camera}
+        camera={
+          arEnabled ? { ...props.camera, position: [0, 0, 0] } : props.camera
+        }
         {...props}
       >
         {arEnabled ? (
-          <ARNftProvider 
-            video={ref} 
+          <ARNftProvider
+            video={ref}
             interpolationFactor={interpolationFactor}
-            onWorkerMessage={onWorkerMessage}>
+            onWorkerMessage={onWorkerMessage}
+          >
             {children}
           </ARNftProvider>
         ) : (
