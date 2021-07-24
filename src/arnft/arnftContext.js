@@ -25,6 +25,8 @@ const ARNftProvider = ({
   children,
   video,
   interpolationFactor,
+  cameraParamUrl,
+  workerScriptUrl,
   onWorkerMessage,
 }) => {
   const { gl, camera } = useThree()
@@ -54,12 +56,13 @@ const ARNftProvider = ({
       camera.updateProjectionMatrix()
 
       const arnft = new ARNft(
-        "../data/camera_para.dat",
         video.current,
         gl,
         camera,
         onLoaded,
         onWorkerMessage,
+        cameraParamUrl,
+        workerScriptUrl,
         interpolationFactor,
       )
 

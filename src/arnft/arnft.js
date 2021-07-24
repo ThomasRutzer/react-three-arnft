@@ -1,11 +1,10 @@
 /* eslint-disable camelcase */
 import { isMobile, setMatrix } from "./utils"
 
-const workerScript = "./js/arnft.worker.js"
-
 export class ARNft {
   constructor(
     cameraParamUrl,
+    workerScriptUrl,
     video,
     renderer,
     camera,
@@ -32,7 +31,7 @@ export class ARNft {
 
     this.initRenderer()
 
-    this.worker = new Worker(workerScript)
+    this.worker = new Worker(workerScriptUrl)
     this.worker.onmessage = (e) => this.onWorkerMessage(e)
     this.worker.postMessage({
       type: "load",

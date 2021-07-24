@@ -9,6 +9,8 @@ import { ARNftProvider } from "../arnftContext"
 const ARCanvas = ({
   arEnabled = true,
   interpolationFactor = 1,
+  workerScriptUrl,
+  cameraParamUrl,
   onWorkerMessage = () => {},
   children,
   ...props
@@ -45,6 +47,8 @@ const ARCanvas = ({
           <ARNftProvider
             video={ref}
             interpolationFactor={interpolationFactor}
+            workerScriptUrl={workerScriptUrl}
+            cameraParamUrl={cameraParamUrl}
             onWorkerMessage={onWorkerMessage}
           >
             {children}
