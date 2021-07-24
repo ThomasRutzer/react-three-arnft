@@ -3,13 +3,13 @@ import { isMobile, setMatrix } from "./utils"
 
 export class ARNft {
   constructor(
-    cameraParamUrl,
-    workerScriptUrl,
     video,
     renderer,
     camera,
     onLoaded,
     onMessage,
+    cameraParamUrl,
+    workerScriptUrl,
     interpolationFactor,
   ) {
     this.inputWidth = video.videoWidth
